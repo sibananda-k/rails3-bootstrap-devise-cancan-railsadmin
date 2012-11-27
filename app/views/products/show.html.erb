@@ -15,14 +15,8 @@
   <%= @product.sku %>
 </p>
 <p>
-		<b>Catagory:</b>
-		<% if @product.catagory != nil %>
-		<b><%= button_to @product.catagory.name, catagory_path(@product.catagory.id),:class => "btn btn-mini btn-inverse",:method => :get %></b>
-		<% else%>
-		<i><b>No Catagory,Click Edit to Update</b></i>
-		
-		<% end %>
+  <b>Cat: </b>
+  <%= @product.catagory.name %>
 </p>
-
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

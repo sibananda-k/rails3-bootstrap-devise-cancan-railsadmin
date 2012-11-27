@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /products
   # GET /products.json
   def index
@@ -40,8 +41,9 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    puts "feffddfdfdfsdfsdfsdffdsdsf#{params[:product]}"
     @product = Product.new(params[:product])
-
+    
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

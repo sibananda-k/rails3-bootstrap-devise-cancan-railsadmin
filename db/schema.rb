@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(:version => 20121127082905) do
     t.string   "name"
     t.integer  "price"
     t.integer  "sku"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "catagory_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "roles", :force => true do |t|
